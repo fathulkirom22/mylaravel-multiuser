@@ -31,3 +31,4 @@ Route::get('notification', 'NotificationController@notification');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/admin_home', 'AdminHomeController@index');
+Route::get('/admin_home/list_users', 'ListUserController@index');

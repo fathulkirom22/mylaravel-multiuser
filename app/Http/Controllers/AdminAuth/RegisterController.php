@@ -9,11 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Registered;
-//use App\Http\AdminAuth\Request;
 use Illuminate\Database\Seeder;
-
 use Illuminate\Support\Facades\Redirect;
-
 use Illuminate\Database\QueryException;
 
 

@@ -20,16 +20,51 @@
         ]); ?>
     </script>
 
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/css/_all-skins.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/toastr.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/toastr.min.js"></script>
+
+    <!-- ChartJS 1.0.1 -->
+    <script src="/js/Chart.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="/js/dashboard2.js"></script>
+    <script src="/js/app2.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <style>
+    .main-sidebar{
+      margin-top: 22px;
+      background: #222D32;
+      padding-left: 10px;
+      padding-right: 10px;
+      position: fixed;
+    }
+    body{
+      padding-top: 100px;
+    }
+    .content-header{
+      margin-top: -50px;
+    }
+    </style>
+
 
 
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -69,9 +104,14 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
     </div>
+    @if (Auth::guard('admin_user')->user())
+      @include('layouts.admin-left-nav')
+    @endif
+
+    @yield('content')
+
+
     <!-- Scripts -->
 
     <script src="/js/app.js"></script>
